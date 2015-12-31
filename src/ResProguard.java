@@ -81,6 +81,8 @@ public class ResProguard {
             outFile = new File(file.getParentFile(), name);
 
             zos = new ZipOutputStream(outFile);
+            //resources.arsc最好不要进行压缩
+            zos.setMethod(ZipOutputStream.STORED);
             zos.putNextEntry("resources.arsc");
             zos.write(ArscFile.encodeArsc(arscFile));
 
