@@ -139,12 +139,11 @@ public class ResProguard {
             else if (c == 'Z')
                 c = 'a';
             else if(c == 'z') {
+                c = '0';
                 if (parent == null)
                     parent = new Name();
-                else {
-                    c = '0';
+                else
                     parent.next();
-                }
             } else
                 c++;
         }
